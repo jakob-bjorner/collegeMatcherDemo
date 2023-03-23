@@ -1,2 +1,1 @@
-# collegeMatcherDemo
-io page to demo college matching MVP
+This is a starter template for [Learn Next.js](https://nextjs.org/learn).
