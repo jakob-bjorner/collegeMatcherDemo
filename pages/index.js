@@ -5,6 +5,8 @@ import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
 
+
+
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
@@ -13,6 +15,7 @@ export default function Home({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>Hello this is a college matching app based on next js template.</p>
+        <p>Here is a link to the <Link href="/search">search.js page</Link></p>
         <p>
           (This is a sample website - you’ll be building a site like this in{' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)

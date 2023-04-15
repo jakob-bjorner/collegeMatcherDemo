@@ -1,0 +1,50 @@
+.essayCard {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .essayCard:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .essayTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0px;
+  }
+  
+  .essayPrompt {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .essayBody {
+    font-size: .9rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .essayCard {
+      padding: 10px;
+    }
+  
+    .essayTitle {
+      font-size: 1.3rem;
+    }
+  
+    .essayPrompt {
+      font-size: 1rem;
+    }
+  
+    .essayBody {
+      font-size: 1rem;
+    }
+  }
+  

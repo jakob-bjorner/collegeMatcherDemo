@@ -6,12 +6,30 @@
     "start": "next start"
   },
   "dependencies": {
+    "@visx/axis": "^3.1.0",
+    "@visx/event": "^3.0.1",
+    "@visx/glyph": "^3.0.0",
+    "@visx/gradient": "^3.0.0",
+    "@visx/grid": "^3.0.1",
+    "@visx/group": "^3.0.0",
+    "@visx/responsive": "^3.0.0",
+    "@visx/scale": "^3.0.0",
+    "@visx/shape": "^3.0.0",
+    "@visx/tooltip": "^3.1.2",
+    "@visx/visx": "^3.1.2",
+    "chart.js": "^4.2.1",
+    "d3": "^7.8.3",
     "date-fns": "^2.29.3",
     "gray-matter": "^4.0.3",
     "next": "latest",
     "react": "18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-d3-library": "^1.1.8",
     "react-dom": "18.2.0",
     "remark": "^14.0.2",
-    "remark-html": "^15.0.1"
+    "remark-html": "^15.0.1",
+    "vega": "^5.24.0",
+    "vega-embed": "^6.21.3",
+    "vega-lite": "^5.6.1"
   }
 }

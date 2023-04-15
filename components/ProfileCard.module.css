@@ -1,0 +1,113 @@
+/* Profile Card */
+.profileCard {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+  }
+  
+  /* Profile Name */
+  .profileName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Profile Bio */
+  .profileBio {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Graphics */
+  .graphics {
+    width: 100%;
+  }
+  
+  /* Bar Chart */
+  .bar-chart {
+    height: 200px;
+  }
+  
+  /* Dropdown */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  .carrotContainer {
+    min-width: 100%;
+  }
+  .carrotContainer {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .carrotContainer:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  .dontshowEssays {
+    display: none;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+  }
+  /* .showEssays {
+    
+  } */
+  
+  .showEssays ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* .showEssays li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .showEssays li:hover {
+    background-color: #f5f5f5;
+  } */

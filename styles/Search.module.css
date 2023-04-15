@@ -1,0 +1,103 @@
+.container {
+/* max-width: 800px; */
+margin: 0 auto;
+padding: 20px;
+font-family: Helvetica, Arial, sans-serif;
+}
+
+.title {
+font-size: 36px;
+font-weight: bold;
+color: #A8003B;
+text-align: center;
+margin-bottom: 20px;
+}
+
+.description {
+font-size: 20px;
+color: #707070;
+text-align: center;
+line-height: 1.5;
+}
+
+.subtitle {
+    font-size: 24px;
+
+    color: #A8003B;
+}
+
+.profilesContainer {
+display: flex;
+flex-direction: row;
+overflow-x: scroll;
+padding: 1rem 0;
+gap: 10px;
+margin: 10px;
+}
+
+.profileCard {
+margin-right: 1rem;
+background-color: white;
+border-radius: 5px;
+padding: 1rem;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.profileName,
+.profileBio {
+margin: 5px 0px;
+}
+
+
+.graphics {
+    min-height: 100px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.form {
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+padding: 1rem 0;
+min-width: 70%;
+margin: auto;
+}
+
+.label {
+font-weight: bold;
+/* margin-top: 1rem; */
+margin-left: 3rem;
+}
+
+.input,
+.textarea {
+padding: 0.5rem;
+margin-bottom: 1rem;
+border: 2px solid #ddd;
+border-radius: 5px;
+font-size: 1rem;
+margin-right: 2rem;
+margin-left: 2rem;
+}
+
+.button {
+padding: 0.5rem 1rem;
+background-color: #333;
+color: white;
+border: none;
+border-radius: 5px;
+font-size: 1rem;
+cursor: pointer;
+margin: auto;
+/* max-width: 30%; */
+}
+.button:hover {
+background-color: #555;
+}
