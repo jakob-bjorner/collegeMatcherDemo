@@ -7,7 +7,8 @@ function Search() {
   const [name, setName] = useState("");
   const [prompt, setPrompt] = useState("");
   const [essay, setEssay] = useState("");
-  const [profiles, setProfiles] = useState([
+  const [profiles, setProfiles] = useState([]);
+  const data = [
     {
       id: 1,
       name: "John Smith",
@@ -66,12 +67,12 @@ function Search() {
         },
       ],
     },
-  ]);
+  ];
   const handleSearch = async (event) => {
     event.preventDefault();
-    const response = await fetch(`/api/search?term=${searchTerm}`);
-    const data = await response.json();
-    // setProfiles(data);
+    // const response = await fetch(`/api/search?term=${searchTerm}`);
+    // const data = await response.json();
+    setProfiles(data);
     window.scrollTo(0, 0);
   };
 
