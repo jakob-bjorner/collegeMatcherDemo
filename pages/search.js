@@ -5,8 +5,7 @@ import Profile from "../components/Profile";
 function Search() {
   const [searchTerm, setSearchTerm] = useState("");
   const [name, setName] = useState("");
-  const [college, setCollege] = useState("");
-  const [essayTitle, setEssayTitle] = useState("");
+  const [prompt, setPrompt] = useState("");
   const [essay, setEssay] = useState("");
   const [profiles, setProfiles] = useState([
     {
@@ -108,26 +107,15 @@ function Search() {
           onChange={(event) => setName(event.target.value)}
           required
         />
-        <label className={styles.label} htmlFor="college">
-          College
+        <label className={styles.label} htmlFor="essay-prompt">
+          Prompt
         </label>
         <input
           className={styles.input}
           type="text"
-          id="college"
-          value={college}
-          onChange={(event) => setCollege(event.target.value)}
-          required
-        />
-        <label className={styles.label} htmlFor="essay-title">
-          Essay Title
-        </label>
-        <input
-          className={styles.input}
-          type="text"
-          id="essay-title"
-          value={essayTitle}
-          onChange={(event) => setEssayTitle(event.target.value)}
+          id="prompt"
+          value={prompt}
+          onChange={(event) => setPrompt(event.target.value)}
           required
         />
         <label className={styles.label} htmlFor="essay">
