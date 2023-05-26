@@ -2,6 +2,24 @@ import BarChart from "../components/BarChart";
 import { useState } from 'react';
 import styles from './ProfileCard.module.css';
 import EssayCard from "./EssayCard";
+export function ProfileSingleEssay({ profile, index }) {
+  const essay = profile["full essay"];
+  const prompt = profile["question"];
+
+  return (
+    <div key={profile.id} className={styles.profileCard}>
+      <div className={styles.profileHeader}>
+        <h4 className={styles.profileName}>{profile.name}</h4>
+        <p className={styles.profileBio}>Alignment Metrics</p>
+        <div className={"bar-chart" + profile.id}></div>
+        <BarChart indexName={profile.id} barProportions={profile.relatedness} maxY={1}></BarChart>
+        <p>Overall essay relatedness is {profile.relatedness["full essay"]}</p>
+      </div>
+      <EssayCard title={"Essay"} prompt={prompt} body={essay} index={0} />
+    </div>
+  );
+}
+
 function ProfileCard({ profile, index }) {
   const [showEssays, setShowEssays] = useState(index == 0 ? true : false);
 
@@ -15,7 +33,7 @@ function ProfileCard({ profile, index }) {
         <h4 className={styles.profileName}>{profile.name}</h4>
         <p className={styles.profileBio}>{profile.bio}</p>
         <div className={"bar-chart" + profile.id}></div>
-        <BarChart indexName={profile.id} barProportions={profile.barProportions} maxY={7}></BarChart>
+        <BarChart indexName={profile.id} barProportions={profile.relatedness}></BarChart>
       </div>
       <div className={styles.carrotContainer}>
         <div className={styles.carrotButton} onClick={toggleEssays}>
@@ -27,7 +45,7 @@ function ProfileCard({ profile, index }) {
                 {
                     profile.essays.map((essay, index) => {
                         return (
-                            <li>
+                            <li key={index}>
                                 <EssayCard title={essay.title} prompt={essay.prompt} body={essay.body} index={index}/>
                             </li>
                         )

@@ -26,13 +26,9 @@ line-height: 1.5;
     color: #A8003B;
 }
 
-.profilesContainer {
-display: flex;
-flex-direction: row;
-overflow-x: scroll;
-padding: 1rem 0;
-gap: 10px;
-margin: 10px;
+.personalBreakdownContainer {
+    display: grid;
+    place-content: center;
 }
 
 .profileCard {
@@ -101,4 +97,9 @@ margin: auto;
 }
 .button:hover {
 background-color: #555;
+}
+
+.previewImage {
+    display: grid;
+    place-items: center;
 }

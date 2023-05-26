@@ -1,0 +1,22 @@
+
+.subtitle {
+    font-size: 24px;
+
+    color: #A8003B;
+}
+
+.profilesContainer {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    padding: 1rem 0;
+    gap: 10px;
+    margin: 10px;
+}
+.searchTypeButtonsContainer {
+    display: flex;
+    /* display them with even spacing between */
+    justify-content: space-evenly;
+}
+
+    
