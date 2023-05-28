@@ -23,9 +23,9 @@ export default function PersonalBreakdown({feedback, essay}) {
                 <h4>Your Essay Breakdown</h4>
                 <div className={"bar-chart" + profileid}></div>
                 <BarChart indexName={profileid} barProportions={profilebarProportions}></BarChart>
-                <EssayCard style={{minWidth: "100vw"}} {...essay} index={1} title={"Submitted Essay"}/>
+                <EssayCard {...essay} index={0} title={"Submitted Essay"}/>
                 <div className={styles.feedbackList}>
-                    {Object.keys(feedback.feedbackBreakdown).map((feedbackName, index) => {return <><h4 className={styles.feedbackNameHeader}>{feedbackName}</h4><p>{feedback.feedbackBreakdown[feedbackName]}</p></>})}
+                    {Object.keys(feedback.feedbackBreakdown).map((feedbackName, index) => {return <div key={index}><h4 className={styles.feedbackNameHeader}>{feedbackName}</h4><p>{feedback.feedbackBreakdown[feedbackName]}</p></div>})}
                 </div>
             </div>
           </div>

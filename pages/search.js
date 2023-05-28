@@ -5,6 +5,7 @@ import Image from "next/image";
 import fetchFeedback from "../lib/api/fetchFeedback";
 import SearchFeedback from "../components/SearchFeedback";
 import { set } from "date-fns";
+import RadarChart from "../components/RadarChart";
 function Search() {
   const [name, setName] = useState("");
   const [prompt, setPrompt] = useState("");
@@ -56,7 +57,7 @@ function Search() {
     }
     window.scrollTo(0, 0);
   };
-
+  const imgScale = 500;
   return (
     <div className={styles.container}>
       {/* display error if not null */}
@@ -108,10 +109,10 @@ function Search() {
       <div className={styles.previewImage}>
         <h2>Example of feedback</h2>
         <Image
-          src="/images/profile.jpg"
-          alt="Picture of the author"
-          height={500}
-          width={500}
+          src="/images/feedback-example.png"
+          alt="Screenshot of example feedback"
+          height={3.25 * imgScale}
+          width={1 * imgScale}
         />
       </div>
     </div>

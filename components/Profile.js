@@ -2,18 +2,18 @@ import BarChart from "../components/BarChart";
 import { useState } from 'react';
 import styles from './ProfileCard.module.css';
 import EssayCard from "./EssayCard";
+import RadarChart from "./RadarChart";
 export function ProfileSingleEssay({ profile, index }) {
   const essay = profile["full essay"];
   const prompt = profile["question"];
-
   return (
     <div key={profile.id} className={styles.profileCard}>
       <div className={styles.profileHeader}>
         <h4 className={styles.profileName}>{profile.name}</h4>
         <p className={styles.profileBio}>Alignment Metrics</p>
         <div className={"bar-chart" + profile.id}></div>
-        <BarChart indexName={profile.id} barProportions={profile.relatedness} maxY={1}></BarChart>
-        <p>Overall essay relatedness is {profile.relatedness["full essay"]}</p>
+        {/* <BarChart indexName={profile.id} barProportions={profile.relatedness} maxY={1}></BarChart> */}
+        <RadarChart id={profile.id} relatedness={profile.relatedness} />
       </div>
       <EssayCard title={"Essay"} prompt={prompt} body={essay} index={0} />
     </div>

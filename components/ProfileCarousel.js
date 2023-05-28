@@ -22,7 +22,7 @@ const ProfileCarousel = ({ essay, prompt, essayDescriptions }) => {
     // a sorting ui for the profiles which allows the user to controll how much of each search type contributes to the sorting of the profiles
     const handleSearchTypeChange = (event) => {
         const newSearchType = {...searchType};
-        newSearchType[event.target.name] = event.target.value;
+        newSearchType[event.target.name] = event.target.checked ? 1 : 0;
         setSearchType(newSearchType);
     }
 
@@ -45,7 +45,7 @@ const ProfileCarousel = ({ essay, prompt, essayDescriptions }) => {
                     {Object.keys(searchType).map((searchTypeName, index) => {
                         return (
                             <div key={index} className={styles.searchTypeButtonContainer}>
-                                <input type="range" min="0" max="1" step="0.1" name={searchTypeName} onChange={handleSearchTypeChange} value={searchType[searchTypeName]}/>
+                                <input type="checkbox" id={searchTypeName} name={searchTypeName} onChange={handleSearchTypeChange} checked={searchType[searchTypeName]} />
                                 <label htmlFor={searchTypeName}>{searchTypeName}</label>
                             </div>
                         )
