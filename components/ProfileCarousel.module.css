@@ -14,8 +14,8 @@
 }
 .searchTypeButtonsContainer {
     display: flex;
-    /* display them with even spacing between */
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 .searchTypeButtonContainer {
     display: flex;
