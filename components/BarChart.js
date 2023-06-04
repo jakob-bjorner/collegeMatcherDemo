@@ -21,7 +21,7 @@ const BarChart = ({
         "#008000",
     ];
     // get the color based on the increment that the rating is from 0 to maxY, there are 11 increments becasue of the colors.
-    return colors[Math.trunc((rating / maxY) * 11)]; 
+    return colors[Math.trunc((rating / maxY) * 10)]; 
   };
   const categories = ["tone", "style", "structure", "hook", "anecdotes & imagery", "creativity of format"];
 
