@@ -5,18 +5,22 @@ import fetchProfiles from '../lib/api/fetchProfiles'
 const ProfileCarousel = ({ essay, prompt, essayDescriptions }) => {
     const [profiles, setProfiles] = useState(null);
     const [error, setError] = useState(null);
-    const [searchType, setSearchType] = useState({'full essay': 1, 'tone': 0, 'style': 0, 'structure': 0, 'hook': 0, 'anecdotes & imagery': 0, 'creativity of format': 0})
+    const [searchType, setSearchType] = useState({'full essay': 1, 'tone': 0, 'style': 0, 'structure': 0, 'hook': 0, 'anecdotes & imagery': 0, 'creativity of format': 0});
+    const [isLoading, setIsLoading] = useState(false);
     useEffect(() => {
         const fetchData = async () => {
             try {
+                setIsLoading(true);
                 const result = await fetchProfiles(essayDescriptions, essay, prompt, searchType, 0);
                 setProfiles(result.profiles);
+                setIsLoading(false);
             } catch (error) {
                 setError(error.message);
                 console.log(error);
             }
         }
         fetchData();
+        
     }, [searchType, essayDescriptions]);
 
     // a sorting ui for the profiles which allows the user to controll how much of each search type contributes to the sorting of the profiles
@@ -53,13 +57,17 @@ const ProfileCarousel = ({ essay, prompt, essayDescriptions }) => {
                 </div>
             </div>
             <h3 className={styles.subtitle}>Most Aligned Applications</h3>
-            <div className={styles.profilesContainer}>
-                {profiles != null ? 
-                profiles.map((profile, index) => (
-                <ProfileSingleEssay key={profile.id} profile={profile} index={index} />
-                )) : 
-                <></>}
-            </div>
+            {
+                isLoading ? <h1>Loading...</h1> : (
+                    <div className={styles.profilesContainer}>
+                        {profiles != null ? 
+                        profiles.map((profile, index) => (
+                        <ProfileSingleEssay key={profile.id} profile={profile} index={index} />
+                        )) : 
+                        <></>}
+                    </div>
+                )
+            }
         </div>
     );
 };

@@ -6,6 +6,7 @@ import fetchFeedback from "../lib/api/fetchFeedback";
 import SearchFeedback from "../components/SearchFeedback";
 import { set } from "date-fns";
 import RadarChart from "../components/RadarChart";
+import { is } from "date-fns/locale";
 function Search() {
   const [name, setName] = useState("");
   const [prompt, setPrompt] = useState("");
@@ -13,6 +14,8 @@ function Search() {
   const [personalFeedback, setPersonalFeedback] = useState(null);
   const [feedback, setFeedback] = useState(null);
   const [error, setError] = useState(null);
+  const [isFeedbackVisible, setIsFeedbackVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const handleSearch = async (event) => {
     event.preventDefault();
     if (prompt === "a") { // dummy data
@@ -48,21 +51,39 @@ function Search() {
       setEssay("People disregard open-mindedness and common ground, essential for handling diverse viewpoints, evidence recognition, cooperation, global challenges such as climate change and immigration. We regress into tribalism, hindering our ability to tackle pressing issues and harming the environment.");
     } else {
       try {
+        setIsLoading(true);
         const data = await fetchFeedback(name, prompt, essay);
         setFeedback(data);
+        setIsLoading(false);
+
       } catch (err) {
         setError(err)
         console.log(error);
       }
     }
+    setIsFeedbackVisible(true);
     window.scrollTo(0, 0);
   };
   const imgScale = 500;
   return (
     <div className={styles.container}>
       {/* display error if not null */}
-      {error && <p className={styles.error}>{JSON.stringify(error)}</p>}
-      <SearchFeedback feedback={feedback} name={name} prompt={prompt} essay={essay}/>
+      {/* {error && <p className={styles.error}>{JSON.stringify(error)}</p>} */}
+      {
+        isLoading ? (
+          <div className={styles.loading}>
+            <h2>Loading...</h2>
+          </div>
+        ) : (
+          isFeedbackVisible ? (
+            <>
+              <SearchFeedback feedback={feedback} name={name} prompt={prompt} essay={essay}/>
+            </>
+          ) :
+          (
+          <></>)
+        )
+      }
       <h3 className={styles.title}>Stanford Alignment</h3>
       <p className={styles.description}>
         Give us your college essay, and we will tell you how close you are to a

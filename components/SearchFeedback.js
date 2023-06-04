@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Suspence } from "react";
 import PersonalBreakdown from "../components/PersonalBreakdown";
 import ProfileCarousel from "../components/ProfileCarousel";
 
